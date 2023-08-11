@@ -3,8 +3,8 @@
 
 下载 [ROS2](https://github.com/ros2/ros2/releases) 
 
-Documentation is at https://docs.ros.org
-
+- 官方文档 [Foxy](https://docs.ros.org/en/humble/index.html) , [Humble](https://docs.ros.org/en/humble/index.html)
+- ROS2 设计 [_ROS 2 Design_](https://design.ros2.org)
 
 ## 安装
 
@@ -667,6 +667,16 @@ ros2 interface show custom_interfaces/srv/AddTwoInts
 
 修改 `py_pubsub` 包，添加依赖 `custom_interfaces`，并且修改 `publisher_member_function.py` 和 `subscriber_member_function.py` 文件，以及 `setup.py` 文件
 
+
+消息格式参看源码 [`common_interfaces`](https://github.com/ros2/common_interfaces)，以及 [`example_interfaces`](https://github.com/ros2/example_interfaces)
+
+
+
+
+
+
+
+
 ### 自定义参数 (Python)
 
 使用 Python (rclpy) 创建并运行具有ROS参数的类。当你制作自己的 nodes 时，你有时需要添加可以从launch文件中设置的参数。
@@ -837,19 +847,10 @@ ros2 launch py_launch py_all_nodes.launch.py
 
 
 
+## 消息同步机制
 
-## ROS2 小车
+[`message_filters`](https://github.com/ros2/message_filters/blob/rolling/index.rst) 中的 `TimeSynchronizer` 时间同步器。
 
-### 功能包
-#### 视频流 cpp_video_streamer
+## ROS2 调度策略
 
-包含两个节点 
-- 读取视频节点 `node_video_reader`
-- 显示视频节点 `node_video_viewer`
-
-##### 读取视频节点 node_video_reader
-参数
-- `source`: 视频源，可选择如下
-  - `camera`: 默认，从摄像头读取
-  - `<file/url>`:  文件名或者网络url
-##### 显示视频节点 node_video_viewer
+> 参考文章：[ROS2调度策略（一） - 于永泽的文章 - 知乎](https://zhuanlan.zhihu.com/p/404067881)

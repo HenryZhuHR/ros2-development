@@ -1,5 +1,5 @@
 
-export WORKDIR=$PWD/ros-example
+export WORKDIR=$PWD/examples
 echo "work dir ${WORKDIR}"
 cd $WORKDIR
 
